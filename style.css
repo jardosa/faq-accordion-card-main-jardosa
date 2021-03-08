@@ -1,0 +1,197 @@
+@font-face {
+  font-family: "Kumbh_Sans_Regular";
+  src: url("Kumbh_Sans/KumbhSans-Regular.ttf");
+  font-family: Kumbh_Sans_Regular;
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Kumbh_Sans_Bold";
+  src: url("Kumbh_Sans/KumbhSans-Bold.ttf");
+  font-family: Kumbh_Sans_Bold;
+  font-weight: 700;
+  font-style: normal;
+}
+:root {
+  --desaturated-blue: hsl(238, 29%, 16%);
+  --soft-red: hsl(14, 88%, 65%);
+  --soft-violet: hsl(273, 75%, 66%);
+  --soft-blue: hsl(240, 73%, 65%);
+  --very-dark-grayish-blue: hsl(237, 12%, 33%);
+  --dark-grayish-blue: hsl(240, 6%, 50%);
+  --light-grayish-blue: hsl(240, 5%, 91%);
+}
+
+body {
+  background-image: linear-gradient(var(--soft-violet), var(--soft-blue));
+  background-repeat: no-repeat;
+  height: 100vh;
+}
+
+h1 {
+  font-family: Kumbh_Sans_Bold;
+}
+
+.outer-container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: inherit;
+}
+
+.inner-container {
+  background-color: white;
+  max-width: 960px;
+  width: 100%;
+  min-height: 480px;
+  border-radius: 10px;
+  display: flex;
+}
+
+
+.text-container{ 
+  margin-top: 50px;
+  flex: 1;
+}
+
+.line {
+  margin-top: 15px;
+  border: 1px solid var(--light-grayish-blue);
+  width: 70%
+}
+
+details {
+  margin-top: 15px;
+  width: 70%;
+  font-family: Kumbh_Sans_Regular;
+  font-size: 14px;
+  position: relative;
+}
+
+
+
+details  p{
+  color: var(--dark-grayish-blue)
+}
+
+
+details  summary{
+  color:var(--very-dark-grayish-blue);
+}
+
+details summary:hover{
+  color: var(--soft-red);
+  cursor: pointer;
+}
+
+details summary::-webkit-details-marker {
+  display: none;
+} /* Chrome */
+
+details summary {
+  list-style-type: none;
+} /* Firefox */
+
+details summary::after {
+  content: url('/images/icon-arrow-down.svg');
+  position: absolute;
+  right: 10px
+}
+
+details[open] summary{
+  font-family: Kumbh_Sans_Bold;
+}
+details[open] summary::after {
+  content: url('/images/icon-arrow-down.svg');
+  display: inline-block;
+  transform: rotate(180deg);
+}
+
+.picture-container {
+  flex: 0 0 50%;
+  background-image: 
+    url("images/illustration-woman-online-desktop.svg"),
+    url("/images/bg-pattern-desktop.svg");
+  background-origin: content-box, content-box;
+  background-position: -80px 50%, -570px -300px;
+  background-repeat: no-repeat, no-repeat, no-repeat;
+  position: relative;
+}
+
+.mobile-office, .mobile-shadow{
+  display:none;
+}
+
+.box {
+  position: absolute;
+  top: 41%;
+  left: -120px;
+}
+
+.attribution {
+  font-size: 11px;
+  text-align: center;
+}
+.attribution a {
+  color: hsl(228, 45%, 44%);
+}
+
+@media only screen and (min-width: 320px) and (max-width: 960px) {
+
+  .outer-container{
+    justify-content: center;
+  }
+
+
+  .inner-container{
+    flex-direction: column;
+    min-height: 480px;
+  }
+
+  .text-container{
+    align-self: center;
+    text-align: left;
+    width: 320px;
+    margin-top: 50px;
+  }
+
+  h1{
+    text-align: center;
+  }
+
+  details {
+    width: 320px;
+  }
+
+  .picture-container{
+    flex: 0 1 100%;
+    background-image: none;
+    position: relative;
+  }
+
+  .line {
+    width: 100%;
+  }
+
+  .mobile-office {
+    display:block;
+    text-align: center;
+    margin-top: -110px;
+    margin-left: -26px;
+    /* position: absolute; */
+    /* left: 30px;
+    bottom: -25px; */
+  }
+  .mobile-shadow {
+    display: block;
+    position: absolute;
+    left: 60px;
+    top: 5px;
+  }
+
+  .box{
+    display: none;
+  }
+
+}
